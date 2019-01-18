@@ -17,7 +17,9 @@ function BlurSaveAutocmdHook()
 	endif
 endfunction
 
-autocmd FocusLost * nested call BlurSaveAutocmdHook()
+augroup plugin_blursave
+	autocmd FocusLost * nested call BlurSaveAutocmdHook()
+augroup END
 
 command BlurSaveOn let s:active = 1
 command BlurSaveOff let s:active = 0
